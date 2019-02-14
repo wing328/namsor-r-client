@@ -11,7 +11,6 @@
 #'
 #' @field path Stores url path of the request.
 #' @field apiClient Handles the client-server communication.
-#' @field userAgent Set the user agent of the request.
 #'
 #' @importFrom R6 R6Class
 #'
@@ -25,11 +24,11 @@
 #'
 #' }
 #'
+#' @importFrom jsonlite base64_enc
 #' @export
 SocialApi <- R6::R6Class(
   'SocialApi',
   public = list(
-    userAgent = "OpenAPI-Generator/0.1.0/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
@@ -55,6 +54,11 @@ SocialApi <- R6::R6Class(
 
       if (!missing(`phone.number`)) {
         urlPath <- gsub(paste0("\\{", "phoneNumber", "\\}"), `phone.number`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -85,6 +89,11 @@ SocialApi <- R6::R6Class(
       }
 
       urlPath <- "/api2/json/phoneCodeBatch"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,

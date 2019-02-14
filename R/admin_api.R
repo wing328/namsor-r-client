@@ -11,7 +11,6 @@
 #'
 #' @field path Stores url path of the request.
 #' @field apiClient Handles the client-server communication.
-#' @field userAgent Set the user agent of the request.
 #'
 #' @importFrom R6 R6Class
 #'
@@ -115,11 +114,11 @@
 #'
 #' }
 #'
+#' @importFrom jsonlite base64_enc
 #' @export
 AdminApi <- R6::R6Class(
   'AdminApi',
   public = list(
-    userAgent = "OpenAPI-Generator/0.1.0/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
@@ -135,6 +134,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/apiUsage"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -157,6 +161,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/apiUsageHistory"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -179,6 +188,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/apiUsageHistoryAggregate"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -201,6 +215,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/availablePlans"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -227,6 +246,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -249,6 +273,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/apiServices"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -271,6 +300,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/billingCurrencies"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -297,6 +331,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -321,6 +360,11 @@ AdminApi <- R6::R6Class(
       urlPath <- "/api2/json/billingInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -351,6 +395,11 @@ AdminApi <- R6::R6Class(
       }
 
       urlPath <- "/api2/json/charge"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
@@ -379,6 +428,11 @@ AdminApi <- R6::R6Class(
 
       if (!missing(`corporate`)) {
         urlPath <- gsub(paste0("\\{", "corporate", "\\}"), `corporate`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -411,6 +465,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "level", "\\}"), `level`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -433,6 +492,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/invalidateCache"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -455,6 +519,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/namsorCounter"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -479,6 +548,11 @@ AdminApi <- R6::R6Class(
       urlPath <- "/api2/json/paymentInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -507,6 +581,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -529,6 +608,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/redeployUI"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -553,6 +637,11 @@ AdminApi <- R6::R6Class(
       urlPath <- "/api2/json/redeployUI/{live}"
       if (!missing(`live`)) {
         urlPath <- gsub(paste0("\\{", "live", "\\}"), `live`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -581,6 +670,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -603,6 +697,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/shutdown"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -625,6 +724,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/softwareVersion"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -651,6 +755,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "source", "\\}"), `source`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -673,6 +782,11 @@ AdminApi <- R6::R6Class(
       headerParams <- character()
 
       urlPath <- "/api2/json/stats"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -711,6 +825,11 @@ AdminApi <- R6::R6Class(
       }
 
       urlPath <- "/api2/json/stripeConnect"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -739,6 +858,11 @@ AdminApi <- R6::R6Class(
 
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -771,6 +895,11 @@ AdminApi <- R6::R6Class(
       urlPath <- "/api2/json/updateBillingInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -807,6 +936,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -837,6 +971,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -861,6 +1000,11 @@ AdminApi <- R6::R6Class(
       urlPath <- "/api2/json/userInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -889,6 +1033,11 @@ AdminApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "emailToken", "\\}"), `email.token`, urlPath)
       }
 
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
@@ -913,6 +1062,11 @@ AdminApi <- R6::R6Class(
       urlPath <- "/api2/json/verifyRemoveEmail/{emailToken}"
       if (!missing(`email.token`)) {
         urlPath <- gsub(paste0("\\{", "emailToken", "\\}"), `email.token`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -943,6 +1097,11 @@ AdminApi <- R6::R6Class(
 
       if (!missing(`vetted`)) {
         urlPath <- gsub(paste0("\\{", "vetted", "\\}"), `vetted`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),

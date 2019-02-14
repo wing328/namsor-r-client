@@ -11,7 +11,6 @@
 #'
 #' @field path Stores url path of the request.
 #' @field apiClient Handles the client-server communication.
-#' @field userAgent Set the user agent of the request.
 #'
 #' @importFrom R6 R6Class
 #'
@@ -31,11 +30,11 @@
 #'
 #' }
 #'
+#' @importFrom jsonlite base64_enc
 #' @export
 ChineseApi <- R6::R6Class(
   'ChineseApi',
   public = list(
-    userAgent = "OpenAPI-Generator/0.1.0/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
@@ -57,6 +56,11 @@ ChineseApi <- R6::R6Class(
 
       if (!missing(`chinese.given.name.latin`)) {
         urlPath <- gsub(paste0("\\{", "chineseGivenNameLatin", "\\}"), `chinese.given.name.latin`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -87,6 +91,11 @@ ChineseApi <- R6::R6Class(
       }
 
       urlPath <- "/api2/json/chineseNameCandidatesBatch"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
@@ -115,6 +124,11 @@ ChineseApi <- R6::R6Class(
       }
 
       urlPath <- "/api2/json/chineseNameCandidatesGenderBatch"
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      }
+
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
@@ -147,6 +161,11 @@ ChineseApi <- R6::R6Class(
 
       if (!missing(`known.gender`)) {
         urlPath <- gsub(paste0("\\{", "knownGender", "\\}"), `known.gender`, urlPath)
+      }
+
+      # API key authentication
+      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
