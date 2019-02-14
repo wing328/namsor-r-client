@@ -49,7 +49,10 @@ library(namsor)
 
 
 #Print current API usage.
-result = AdminApi$ApiUsage()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ApiUsage()
 dput(result)
 ```
 
@@ -82,7 +85,10 @@ library(namsor)
 
 
 #Print historical API usage.
-result = AdminApi$ApiUsageHistory()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ApiUsageHistory()
 dput(result)
 ```
 
@@ -115,7 +121,10 @@ library(namsor)
 
 
 #Print historical API usage (in an aggregated view, by service, by day/hour/min).
-result = AdminApi$ApiUsageHistoryAggregate()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ApiUsageHistoryAggregate()
 dput(result)
 ```
 
@@ -148,7 +157,10 @@ library(namsor)
 
 
 #List all available plans in the default currency (usd).
-result = AdminApi$AvailablePlans()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$AvailablePlans()
 dput(result)
 ```
 
@@ -182,7 +194,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #List all available plans in the user's preferred currency.
-result = AdminApi$AvailablePlans1(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$AvailablePlans1(var.token)
 dput(result)
 ```
 
@@ -218,7 +233,10 @@ library(namsor)
 
 
 #List of API services and usage cost in Units (default is 1=ONE Unit).
-result = AdminApi$AvailableServices()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$AvailableServices()
 dput(result)
 ```
 
@@ -251,7 +269,10 @@ library(namsor)
 
 
 #List possible currency options for billing (USD, EUR, GBP, ...)
-result = AdminApi$BillingCurrencies()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$BillingCurrencies()
 dput(result)
 ```
 
@@ -285,7 +306,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #Read the history billing information (invoices paid via Stripe or manually).
-result = AdminApi$BillingHistory(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$BillingHistory(var.token)
 dput(result)
 ```
 
@@ -322,7 +346,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #Read the billing information (company name, address, phone, vat ID)
-result = AdminApi$BillingInfo(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$BillingInfo(var.token)
 dput(result)
 ```
 
@@ -359,7 +386,10 @@ library(namsor)
 var.inline.object <- InlineObject$new # InlineObject | 
 
 #Create a Stripe Customer, based on a payment card token (from secure StripeJS) and email.
-result = AdminApi$Charge(inline.object=var.inline.object)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$Charge(inline.object=var.inline.object)
 dput(result)
 ```
 
@@ -397,7 +427,10 @@ var.api.key <- 'api.key_example' # character |
 var.corporate <- 'corporate_example' # character | 
 
 #Setting an API Key to a corporate status.
-AdminApi$CorporateKey(var.api.key, var.corporate)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$CorporateKey(var.api.key, var.corporate)
 ```
 
 ### Parameters
@@ -435,7 +468,10 @@ var.logger <- 'logger_example' # character |
 var.level <- 'level_example' # character | 
 
 #Update debug level for a classifier
-AdminApi$DebugLevel(var.logger, var.level)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$DebugLevel(var.logger, var.level)
 ```
 
 ### Parameters
@@ -471,7 +507,10 @@ library(namsor)
 
 
 #Invalidate system caches.
-AdminApi$InvalidateCache()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$InvalidateCache()
 ```
 
 ### Parameters
@@ -503,7 +542,10 @@ library(namsor)
 
 
 #Get the overall API counter
-result = AdminApi$NamsorCounter()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$NamsorCounter()
 dput(result)
 ```
 
@@ -537,7 +579,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #Get the Stripe payment information associated with the current google auth session token.
-result = AdminApi$PaymentInfo(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$PaymentInfo(var.token)
 dput(result)
 ```
 
@@ -574,7 +619,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #Procure an API Key (sent via Email), based on an auth token. Keep your API Key secret.
-result = AdminApi$ProcureKey(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ProcureKey(var.token)
 dput(result)
 ```
 
@@ -610,7 +658,10 @@ library(namsor)
 
 
 #Redeploy UI from current dev branch.
-AdminApi$RedeployUI()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$RedeployUI()
 ```
 
 ### Parameters
@@ -643,7 +694,10 @@ library(namsor)
 var.live <- 'live_example' # character | 
 
 #Redeploy UI from current dev branch.
-AdminApi$RedeployUI1(var.live)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$RedeployUI1(var.live)
 ```
 
 ### Parameters
@@ -679,7 +733,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #Subscribe to a give API plan, using the user's preferred or default currency.
-result = AdminApi$RemoveUserAccount(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$RemoveUserAccount(var.token)
 dput(result)
 ```
 
@@ -715,7 +772,10 @@ library(namsor)
 
 
 #Stop learning and shutdown system.
-AdminApi$Shutdown()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$Shutdown()
 ```
 
 ### Parameters
@@ -747,7 +807,10 @@ library(namsor)
 
 
 #Get the current software version
-result = AdminApi$SoftwareVersion()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$SoftwareVersion()
 dput(result)
 ```
 
@@ -781,7 +844,10 @@ library(namsor)
 var.source <- 'source_example' # character | 
 
 #Print basic source statistics.
-result = AdminApi$SourceStats(var.source)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$SourceStats(var.source)
 dput(result)
 ```
 
@@ -817,7 +883,10 @@ library(namsor)
 
 
 #Print basic system statistics.
-result = AdminApi$Stats()
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$Stats()
 dput(result)
 ```
 
@@ -854,7 +923,10 @@ var.error <- 'error_example' # character |
 var.error.description <- 'error.description_example' # character | 
 
 #Connects a Stripe Account.
-AdminApi$StripeConnect(scope=var.scope, code=var.code, error=var.error, error.description=var.error.description)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$StripeConnect(scope=var.scope, code=var.code, error=var.error, error.description=var.error.description)
 ```
 
 ### Parameters
@@ -894,7 +966,10 @@ var.plan.name <- 'plan.name_example' # character |
 var.token <- 'token_example' # character | 
 
 #Subscribe to a give API plan, using the user's preferred or default currency.
-result = AdminApi$SubscribePlan(var.plan.name, var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$SubscribePlan(var.plan.name, var.token)
 dput(result)
 ```
 
@@ -933,7 +1008,10 @@ var.token <- 'token_example' # character |
 var.billing.info.in.out <- BillingInfoInOut$new # BillingInfoInOut | 
 
 #Sets or update the billing information (company name, address, phone, vat ID)
-result = AdminApi$UpdateBillingInfo(var.token, billing.info.in.out=var.billing.info.in.out)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$UpdateBillingInfo(var.token, billing.info.in.out=var.billing.info.in.out)
 dput(result)
 ```
 
@@ -973,7 +1051,10 @@ var.hard.or.soft <- 'hard.or.soft_example' # character |
 var.token <- 'token_example' # character | 
 
 #Modifies the hard/soft limit on the API plan's overages (default is 0$ soft limit).
-result = AdminApi$UpdateLimit(var.usage.limit, var.hard.or.soft, var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$UpdateLimit(var.usage.limit, var.hard.or.soft, var.token)
 dput(result)
 ```
 
@@ -1013,7 +1094,10 @@ var.defaut.source.id <- 'defaut.source.id_example' # character |
 var.token <- 'token_example' # character | 
 
 #Update the default Stripe card associated with the current google auth session token.
-result = AdminApi$UpdatePaymentDefault(var.defaut.source.id, var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$UpdatePaymentDefault(var.defaut.source.id, var.token)
 dput(result)
 ```
 
@@ -1051,7 +1135,10 @@ library(namsor)
 var.token <- 'token_example' # character | 
 
 #Get the user profile associated with the current google auth session token.
-result = AdminApi$UserInfo(var.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$UserInfo(var.token)
 dput(result)
 ```
 
@@ -1088,7 +1175,10 @@ library(namsor)
 var.email.token <- 'email.token_example' # character | 
 
 #Verifies an email, based on token sent to that email
-result = AdminApi$VerifyEmail(var.email.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$VerifyEmail(var.email.token)
 dput(result)
 ```
 
@@ -1125,7 +1215,10 @@ library(namsor)
 var.email.token <- 'email.token_example' # character | 
 
 #Verifies an email, based on token sent to that email
-result = AdminApi$VerifyRemoveEmail(var.email.token)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$VerifyRemoveEmail(var.email.token)
 dput(result)
 ```
 
@@ -1163,7 +1256,10 @@ var.source <- 'source_example' # character |
 var.vetted <- 'vetted_example' # character | 
 
 #Vetting of a source.
-AdminApi$Vet(var.source, var.vetted)
+api.instance <- AdminApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$Vet(var.source, var.vetted)
 ```
 
 ### Parameters

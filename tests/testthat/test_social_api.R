@@ -7,11 +7,11 @@ api.instance <- SocialApi$new()
 
 test_that("PhonePrefix", {
   # tests for PhonePrefix
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 11 UNITS] Infer the likely country and phone prefix, given a personal name and formatted / unformatted phone number.
-  # @param first.name 
-  # @param last.name 
-  # @param phone.number 
-  # @param [Hash] opts the optional parameters
+  # @param character  first.name   
+  # @param character  last.name   
+  # @param character  phone.number   
   # @return [FirstLastNamePhoneCodedOut]
 
   # uncomment below to test the operation
@@ -20,9 +20,9 @@ test_that("PhonePrefix", {
 
 test_that("PhonePrefixBatch", {
   # tests for PhonePrefixBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, detecting automatically the local context given a name and formatted / unformatted phone number.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNamePhoneNumberIn] :batch.first.last.name.phone.number.in A list of personal names
+  # @param BatchFirstLastNamePhoneNumberIn  batch.first.last.name.phone.number.in  A list of personal names  (optional)
   # @return [BatchFirstLastNamePhoneCodedOut]
 
   # uncomment below to test the operation

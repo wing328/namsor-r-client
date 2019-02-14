@@ -47,7 +47,7 @@ ChineseApi <- R6::R6Class(
     ChineseNameCandidates = function(chinese.surname.latin, chinese.given.name.latin, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/chineseNameCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}"
       if (!missing(`chinese.surname.latin`)) {
@@ -59,8 +59,8 @@ ChineseApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -82,7 +82,7 @@ ChineseApi <- R6::R6Class(
     ChineseNameCandidatesBatch = function(batch.first.last.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.in`)) {
         body <- `batch.first.last.name.in`$toJSONString()
@@ -92,8 +92,8 @@ ChineseApi <- R6::R6Class(
 
       urlPath <- "/api2/json/chineseNameCandidatesBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -115,7 +115,7 @@ ChineseApi <- R6::R6Class(
     ChineseNameCandidatesGenderBatch = function(batch.first.last.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.in`)) {
         body <- `batch.first.last.name.in`$toJSONString()
@@ -125,8 +125,8 @@ ChineseApi <- R6::R6Class(
 
       urlPath <- "/api2/json/chineseNameCandidatesGenderBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -148,7 +148,7 @@ ChineseApi <- R6::R6Class(
     ChineseNameGenderCandidates = function(chinese.surname.latin, chinese.given.name.latin, known.gender, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/chineseNameGenderCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}/{knownGender}"
       if (!missing(`chinese.surname.latin`)) {
@@ -164,8 +164,8 @@ ChineseApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),

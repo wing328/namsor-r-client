@@ -7,8 +7,8 @@ api.instance <- AdminApi$new()
 
 test_that("ApiUsage", {
   # tests for ApiUsage
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Print current API usage.
-  # @param [Hash] opts the optional parameters
   # @return [APIPeriodUsageOut]
 
   # uncomment below to test the operation
@@ -17,8 +17,8 @@ test_that("ApiUsage", {
 
 test_that("ApiUsageHistory", {
   # tests for ApiUsageHistory
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Print historical API usage.
-  # @param [Hash] opts the optional parameters
   # @return [APIPeriodUsageOut]
 
   # uncomment below to test the operation
@@ -27,8 +27,8 @@ test_that("ApiUsageHistory", {
 
 test_that("ApiUsageHistoryAggregate", {
   # tests for ApiUsageHistoryAggregate
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Print historical API usage (in an aggregated view, by service, by day/hour/min).
-  # @param [Hash] opts the optional parameters
   # @return [APIPeriodUsageOut]
 
   # uncomment below to test the operation
@@ -37,8 +37,8 @@ test_that("ApiUsageHistoryAggregate", {
 
 test_that("AvailablePlans", {
   # tests for AvailablePlans
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # List all available plans in the default currency (usd).
-  # @param [Hash] opts the optional parameters
   # @return [APIPlansOut]
 
   # uncomment below to test the operation
@@ -47,9 +47,9 @@ test_that("AvailablePlans", {
 
 test_that("AvailablePlans1", {
   # tests for AvailablePlans1
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # List all available plans in the user&#39;s preferred currency.
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [APIPlansOut]
 
   # uncomment below to test the operation
@@ -58,8 +58,8 @@ test_that("AvailablePlans1", {
 
 test_that("AvailableServices", {
   # tests for AvailableServices
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # List of API services and usage cost in Units (default is 1&#x3D;ONE Unit).
-  # @param [Hash] opts the optional parameters
   # @return [APIPlansOut]
 
   # uncomment below to test the operation
@@ -68,8 +68,8 @@ test_that("AvailableServices", {
 
 test_that("BillingCurrencies", {
   # tests for BillingCurrencies
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # List possible currency options for billing (USD, EUR, GBP, ...)
-  # @param [Hash] opts the optional parameters
   # @return [CurrenciesOut]
 
   # uncomment below to test the operation
@@ -78,9 +78,9 @@ test_that("BillingCurrencies", {
 
 test_that("BillingHistory", {
   # tests for BillingHistory
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Read the history billing information (invoices paid via Stripe or manually).
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [BillingHistoryOut]
 
   # uncomment below to test the operation
@@ -89,9 +89,9 @@ test_that("BillingHistory", {
 
 test_that("BillingInfo", {
   # tests for BillingInfo
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Read the billing information (company name, address, phone, vat ID)
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [BillingInfoInOut]
 
   # uncomment below to test the operation
@@ -100,9 +100,9 @@ test_that("BillingInfo", {
 
 test_that("Charge", {
   # tests for Charge
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Create a Stripe Customer, based on a payment card token (from secure StripeJS) and email.
-  # @param [Hash] opts the optional parameters
-  # @option opts [InlineObject] :inline.object 
+  # @param InlineObject  inline.object    (optional)
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -111,10 +111,10 @@ test_that("Charge", {
 
 test_that("CorporateKey", {
   # tests for CorporateKey
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Setting an API Key to a corporate status.
-  # @param api.key 
-  # @param corporate 
-  # @param [Hash] opts the optional parameters
+  # @param character  api.key   
+  # @param character  corporate   
   # @return [Void]
 
   # uncomment below to test the operation
@@ -123,10 +123,10 @@ test_that("CorporateKey", {
 
 test_that("DebugLevel", {
   # tests for DebugLevel
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Update debug level for a classifier
-  # @param logger 
-  # @param level 
-  # @param [Hash] opts the optional parameters
+  # @param character  logger   
+  # @param character  level   
   # @return [Void]
 
   # uncomment below to test the operation
@@ -135,8 +135,8 @@ test_that("DebugLevel", {
 
 test_that("InvalidateCache", {
   # tests for InvalidateCache
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Invalidate system caches.
-  # @param [Hash] opts the optional parameters
   # @return [Void]
 
   # uncomment below to test the operation
@@ -145,8 +145,8 @@ test_that("InvalidateCache", {
 
 test_that("NamsorCounter", {
   # tests for NamsorCounter
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Get the overall API counter
-  # @param [Hash] opts the optional parameters
   # @return [SoftwareVersionOut]
 
   # uncomment below to test the operation
@@ -155,9 +155,9 @@ test_that("NamsorCounter", {
 
 test_that("PaymentInfo", {
   # tests for PaymentInfo
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Get the Stripe payment information associated with the current google auth session token.
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -166,9 +166,9 @@ test_that("PaymentInfo", {
 
 test_that("ProcureKey", {
   # tests for ProcureKey
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Procure an API Key (sent via Email), based on an auth token. Keep your API Key secret.
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -177,8 +177,8 @@ test_that("ProcureKey", {
 
 test_that("RedeployUI", {
   # tests for RedeployUI
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Redeploy UI from current dev branch.
-  # @param [Hash] opts the optional parameters
   # @return [Void]
 
   # uncomment below to test the operation
@@ -187,9 +187,9 @@ test_that("RedeployUI", {
 
 test_that("RedeployUI1", {
   # tests for RedeployUI1
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Redeploy UI from current dev branch.
-  # @param live 
-  # @param [Hash] opts the optional parameters
+  # @param character  live   
   # @return [Void]
 
   # uncomment below to test the operation
@@ -198,9 +198,9 @@ test_that("RedeployUI1", {
 
 test_that("RemoveUserAccount", {
   # tests for RemoveUserAccount
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Subscribe to a give API plan, using the user&#39;s preferred or default currency.
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [APIPlanSubscriptionOut]
 
   # uncomment below to test the operation
@@ -209,8 +209,8 @@ test_that("RemoveUserAccount", {
 
 test_that("Shutdown", {
   # tests for Shutdown
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Stop learning and shutdown system.
-  # @param [Hash] opts the optional parameters
   # @return [Void]
 
   # uncomment below to test the operation
@@ -219,8 +219,8 @@ test_that("Shutdown", {
 
 test_that("SoftwareVersion", {
   # tests for SoftwareVersion
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Get the current software version
-  # @param [Hash] opts the optional parameters
   # @return [SoftwareVersionOut]
 
   # uncomment below to test the operation
@@ -229,9 +229,9 @@ test_that("SoftwareVersion", {
 
 test_that("SourceStats", {
   # tests for SourceStats
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Print basic source statistics.
-  # @param source 
-  # @param [Hash] opts the optional parameters
+  # @param character  source   
   # @return [SystemMetricsOut]
 
   # uncomment below to test the operation
@@ -240,8 +240,8 @@ test_that("SourceStats", {
 
 test_that("Stats", {
   # tests for Stats
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Print basic system statistics.
-  # @param [Hash] opts the optional parameters
   # @return [SystemMetricsOut]
 
   # uncomment below to test the operation
@@ -250,12 +250,12 @@ test_that("Stats", {
 
 test_that("StripeConnect", {
   # tests for StripeConnect
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Connects a Stripe Account.
-  # @param [Hash] opts the optional parameters
-  # @option opts [character] :scope 
-  # @option opts [character] :code 
-  # @option opts [character] :error 
-  # @option opts [character] :error.description 
+  # @param character  scope    (optional)
+  # @param character  code    (optional)
+  # @param character  error    (optional)
+  # @param character  error.description    (optional)
   # @return [Void]
 
   # uncomment below to test the operation
@@ -264,10 +264,10 @@ test_that("StripeConnect", {
 
 test_that("SubscribePlan", {
   # tests for SubscribePlan
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Subscribe to a give API plan, using the user&#39;s preferred or default currency.
-  # @param plan.name 
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  plan.name   
+  # @param character  token   
   # @return [APIPlanSubscriptionOut]
 
   # uncomment below to test the operation
@@ -276,10 +276,10 @@ test_that("SubscribePlan", {
 
 test_that("UpdateBillingInfo", {
   # tests for UpdateBillingInfo
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Sets or update the billing information (company name, address, phone, vat ID)
-  # @param token 
-  # @param [Hash] opts the optional parameters
-  # @option opts [BillingInfoInOut] :billing.info.in.out 
+  # @param character  token   
+  # @param BillingInfoInOut  billing.info.in.out    (optional)
   # @return [BillingInfoInOut]
 
   # uncomment below to test the operation
@@ -288,11 +288,11 @@ test_that("UpdateBillingInfo", {
 
 test_that("UpdateLimit", {
   # tests for UpdateLimit
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Modifies the hard/soft limit on the API plan&#39;s overages (default is 0$ soft limit).
-  # @param usage.limit 
-  # @param hard.or.soft 
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param integer  usage.limit   
+  # @param character  hard.or.soft   
+  # @param character  token   
   # @return [APIPeriodUsageOut]
 
   # uncomment below to test the operation
@@ -301,10 +301,10 @@ test_that("UpdateLimit", {
 
 test_that("UpdatePaymentDefault", {
   # tests for UpdatePaymentDefault
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Update the default Stripe card associated with the current google auth session token.
-  # @param defaut.source.id 
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  defaut.source.id   
+  # @param character  token   
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -313,9 +313,9 @@ test_that("UpdatePaymentDefault", {
 
 test_that("UserInfo", {
   # tests for UserInfo
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Get the user profile associated with the current google auth session token.
-  # @param token 
-  # @param [Hash] opts the optional parameters
+  # @param character  token   
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -324,9 +324,9 @@ test_that("UserInfo", {
 
 test_that("VerifyEmail", {
   # tests for VerifyEmail
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Verifies an email, based on token sent to that email
-  # @param email.token 
-  # @param [Hash] opts the optional parameters
+  # @param character  email.token   
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -335,9 +335,9 @@ test_that("VerifyEmail", {
 
 test_that("VerifyRemoveEmail", {
   # tests for VerifyRemoveEmail
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Verifies an email, based on token sent to that email
-  # @param email.token 
-  # @param [Hash] opts the optional parameters
+  # @param character  email.token   
   # @return [APIKeyOut]
 
   # uncomment below to test the operation
@@ -346,10 +346,10 @@ test_that("VerifyRemoveEmail", {
 
 test_that("Vet", {
   # tests for Vet
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Vetting of a source.
-  # @param source 
-  # @param vetted 
-  # @param [Hash] opts the optional parameters
+  # @param character  source   
+  # @param character  vetted   
   # @return [Void]
 
   # uncomment below to test the operation

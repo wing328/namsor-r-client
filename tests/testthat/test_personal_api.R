@@ -7,9 +7,9 @@ api.instance <- PersonalApi$new()
 
 test_that("Country", {
   # tests for Country
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin.
-  # @param personal.name.full 
-  # @param [Hash] opts the optional parameters
+  # @param character  personal.name.full   
   # @return [PersonalNameGeoOut]
 
   # uncomment below to test the operation
@@ -18,9 +18,9 @@ test_that("Country", {
 
 test_that("CountryBatch", {
   # tests for CountryBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer the likely country of residence of up to 1000 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchPersonalNameIn] :batch.personal.name.in A list of personal names
+  # @param BatchPersonalNameIn  batch.personal.name.in  A list of personal names  (optional)
   # @return [BatchPersonalNameGeoOut]
 
   # uncomment below to test the operation
@@ -29,11 +29,11 @@ test_that("CountryBatch", {
 
 test_that("Diaspora", {
   # tests for Diaspora
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 20 UNITS] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
-  # @param country.iso2 
-  # @param first.name 
-  # @param last.name 
-  # @param [Hash] opts the optional parameters
+  # @param character  country.iso2   
+  # @param character  first.name   
+  # @param character  last.name   
   # @return [FirstLastNameDiasporaedOut]
 
   # uncomment below to test the operation
@@ -42,9 +42,9 @@ test_that("Diaspora", {
 
 test_that("DiasporaBatch", {
   # tests for DiasporaBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 20 UNITS] Infer the likely ethnicity/diaspora of up to 1000 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameGeoIn] :batch.first.last.name.geo.in A list of personal names
+  # @param BatchFirstLastNameGeoIn  batch.first.last.name.geo.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameDiasporaedOut]
 
   # uncomment below to test the operation
@@ -53,10 +53,10 @@ test_that("DiasporaBatch", {
 
 test_that("Gender", {
   # tests for Gender
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of a name.
-  # @param first.name 
-  # @param last.name 
-  # @param [Hash] opts the optional parameters
+  # @param character  first.name   
+  # @param character  last.name   
   # @return [FirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -65,9 +65,9 @@ test_that("Gender", {
 
 test_that("GenderBatch", {
   # tests for GenderBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of up to 1000 names, detecting automatically the cultural context.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameIn] :batch.first.last.name.in A list of personal names
+  # @param BatchFirstLastNameIn  batch.first.last.name.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -76,9 +76,9 @@ test_that("GenderBatch", {
 
 test_that("GenderFull", {
   # tests for GenderFull
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of a full name, ex. John H. Smith
-  # @param full.name 
-  # @param [Hash] opts the optional parameters
+  # @param character  full.name   
   # @return [FirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -87,9 +87,9 @@ test_that("GenderFull", {
 
 test_that("GenderFullBatch", {
   # tests for GenderFullBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchPersonalNameIn] :batch.personal.name.in A list of personal names
+  # @param BatchPersonalNameIn  batch.personal.name.in  A list of personal names  (optional)
   # @return [BatchPersonalNameGenderedOut]
 
   # uncomment below to test the operation
@@ -98,10 +98,10 @@ test_that("GenderFullBatch", {
 
 test_that("GenderFullGeo", {
   # tests for GenderFullGeo
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of a full name, given a local context (ISO2 country code).
-  # @param full.name 
-  # @param country.iso2 
-  # @param [Hash] opts the optional parameters
+  # @param character  full.name   
+  # @param character  country.iso2   
   # @return [FirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -110,9 +110,9 @@ test_that("GenderFullGeo", {
 
 test_that("GenderFullGeoBatch", {
   # tests for GenderFullGeoBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchPersonalNameGeoIn] :batch.personal.name.geo.in A list of personal names, with a country ISO2 code
+  # @param BatchPersonalNameGeoIn  batch.personal.name.geo.in  A list of personal names, with a country ISO2 code  (optional)
   # @return [BatchPersonalNameGenderedOut]
 
   # uncomment below to test the operation
@@ -121,11 +121,11 @@ test_that("GenderFullGeoBatch", {
 
 test_that("GenderGeo", {
   # tests for GenderGeo
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of a name, given a local context (ISO2 country code).
-  # @param first.name 
-  # @param last.name 
-  # @param country.iso2 
-  # @param [Hash] opts the optional parameters
+  # @param character  first.name   
+  # @param character  last.name   
+  # @param character  country.iso2   
   # @return [FirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -134,9 +134,9 @@ test_that("GenderGeo", {
 
 test_that("GenderGeoBatch", {
   # tests for GenderGeoBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of up to 1000 names, each given a local context (ISO2 country code).
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameGeoIn] :batch.first.last.name.geo.in A list of names, with country code.
+  # @param BatchFirstLastNameGeoIn  batch.first.last.name.geo.in  A list of names, with country code.  (optional)
   # @return [BatchFirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -145,10 +145,10 @@ test_that("GenderGeoBatch", {
 
 test_that("Origin", {
   # tests for Origin
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use &#39;diaspora&#39; instead.
-  # @param first.name 
-  # @param last.name 
-  # @param [Hash] opts the optional parameters
+  # @param character  first.name   
+  # @param character  last.name   
   # @return [FirstLastNameOriginedOut]
 
   # uncomment below to test the operation
@@ -157,9 +157,9 @@ test_that("Origin", {
 
 test_that("OriginBatch", {
   # tests for OriginBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer the likely country of origin of up to 1000 names, detecting automatically the cultural context.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameIn] :batch.first.last.name.in A list of personal names
+  # @param BatchFirstLastNameIn  batch.first.last.name.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameOriginedOut]
 
   # uncomment below to test the operation
@@ -168,9 +168,9 @@ test_that("OriginBatch", {
 
 test_that("ParsedGenderBatch", {
   # tests for ParsedGenderBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of up to 1000 fully parsed names, detecting automatically the cultural context.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchParsedFullNameIn] :batch.parsed.full.name.in A list of personal names
+  # @param BatchParsedFullNameIn  batch.parsed.full.name.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -179,9 +179,9 @@ test_that("ParsedGenderBatch", {
 
 test_that("ParsedGenderGeoBatch", {
   # tests for ParsedGenderGeoBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Infer the likely gender of up to 1000 fully parsed names, detecting automatically the cultural context.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchParsedFullNameGeoIn] :batch.parsed.full.name.geo.in A list of personal names
+  # @param BatchParsedFullNameGeoIn  batch.parsed.full.name.geo.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameGenderedOut]
 
   # uncomment below to test the operation
@@ -190,10 +190,10 @@ test_that("ParsedGenderGeoBatch", {
 
 test_that("UsRaceEthnicity", {
   # tests for UsRaceEthnicity
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy.
-  # @param first.name 
-  # @param last.name 
-  # @param [Hash] opts the optional parameters
+  # @param character  first.name   
+  # @param character  last.name   
   # @return [FirstLastNameUSRaceEthnicityOut]
 
   # uncomment below to test the operation
@@ -202,9 +202,9 @@ test_that("UsRaceEthnicity", {
 
 test_that("UsRaceEthnicityBatch", {
   # tests for UsRaceEthnicityBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer up-to 1000 US resident&#39;s likely race/ethnicity according to US Census taxonomy.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameGeoIn] :batch.first.last.name.geo.in A list of personal names
+  # @param BatchFirstLastNameGeoIn  batch.first.last.name.geo.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameUSRaceEthnicityOut]
 
   # uncomment below to test the operation
@@ -213,11 +213,11 @@ test_that("UsRaceEthnicityBatch", {
 
 test_that("UsRaceEthnicityZIP5", {
   # tests for UsRaceEthnicityZIP5
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info.
-  # @param first.name 
-  # @param last.name 
-  # @param zip5.code 
-  # @param [Hash] opts the optional parameters
+  # @param character  first.name   
+  # @param character  last.name   
+  # @param character  zip5.code   
   # @return [FirstLastNameUSRaceEthnicityOut]
 
   # uncomment below to test the operation
@@ -226,9 +226,9 @@ test_that("UsRaceEthnicityZIP5", {
 
 test_that("UsZipRaceEthnicityBatch", {
   # tests for UsZipRaceEthnicityBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # [USES 10 UNITS] Infer up-to 1000 US resident&#39;s likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameGeoZippedIn] :batch.first.last.name.geo.zipped.in A list of personal names
+  # @param BatchFirstLastNameGeoZippedIn  batch.first.last.name.geo.zipped.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameUSRaceEthnicityOut]
 
   # uncomment below to test the operation

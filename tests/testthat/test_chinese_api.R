@@ -7,10 +7,10 @@ api.instance <- ChineseApi$new()
 
 test_that("ChineseNameCandidates", {
   # tests for ChineseNameCandidates
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Identify Chinese name candidates, based on the romanized name.
-  # @param chinese.surname.latin 
-  # @param chinese.given.name.latin 
-  # @param [Hash] opts the optional parameters
+  # @param character  chinese.surname.latin   
+  # @param character  chinese.given.name.latin   
   # @return [RomanizedNameOut]
 
   # uncomment below to test the operation
@@ -19,9 +19,9 @@ test_that("ChineseNameCandidates", {
 
 test_that("ChineseNameCandidatesBatch", {
   # tests for ChineseNameCandidatesBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname).
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameIn] :batch.first.last.name.in A list of personal Chinese names in LATIN, firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname
+  # @param BatchFirstLastNameIn  batch.first.last.name.in  A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname  (optional)
   # @return [BatchNameMatchCandidatesOut]
 
   # uncomment below to test the operation
@@ -30,9 +30,9 @@ test_that("ChineseNameCandidatesBatch", {
 
 test_that("ChineseNameCandidatesGenderBatch", {
   # tests for ChineseNameCandidatesGenderBatch
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname).
-  # @param [Hash] opts the optional parameters
-  # @option opts [BatchFirstLastNameIn] :batch.first.last.name.in A list of personal Chinese names in LATIN, firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname
+  # @param BatchFirstLastNameIn  batch.first.last.name.in  A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname  (optional)
   # @return [BatchNameMatchCandidatesOut]
 
   # uncomment below to test the operation
@@ -41,11 +41,11 @@ test_that("ChineseNameCandidatesGenderBatch", {
 
 test_that("ChineseNameGenderCandidates", {
   # tests for ChineseNameGenderCandidates
+  # base path: https://v2.namsor.com/NamSorAPIv2
   # Identify Chinese name candidates, based on the romanized name - having a known gender (&#39;male&#39; or &#39;female&#39;)
-  # @param chinese.surname.latin 
-  # @param chinese.given.name.latin 
-  # @param known.gender 
-  # @param [Hash] opts the optional parameters
+  # @param character  chinese.surname.latin   
+  # @param character  chinese.given.name.latin   
+  # @param character  known.gender   
   # @return [RomanizedNameOut]
 
   # uncomment below to test the operation

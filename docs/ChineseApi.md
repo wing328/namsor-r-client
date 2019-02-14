@@ -23,7 +23,10 @@ var.chinese.surname.latin <- 'chinese.surname.latin_example' # character |
 var.chinese.given.name.latin <- 'chinese.given.name.latin_example' # character | 
 
 #Identify Chinese name candidates, based on the romanized name.
-result = ChineseApi$ChineseNameCandidates(var.chinese.surname.latin, var.chinese.given.name.latin)
+api.instance <- ChineseApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ChineseNameCandidates(var.chinese.surname.latin, var.chinese.given.name.latin)
 dput(result)
 ```
 
@@ -61,7 +64,10 @@ library(namsor)
 var.batch.first.last.name.in <- BatchFirstLastNameIn$new # BatchFirstLastNameIn | A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname
 
 #Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname).
-result = ChineseApi$ChineseNameCandidatesBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+api.instance <- ChineseApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ChineseNameCandidatesBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
 
@@ -98,7 +104,10 @@ library(namsor)
 var.batch.first.last.name.in <- BatchFirstLastNameIn$new # BatchFirstLastNameIn | A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname
 
 #Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname).
-result = ChineseApi$ChineseNameCandidatesGenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+api.instance <- ChineseApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ChineseNameCandidatesGenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
 
@@ -137,7 +146,10 @@ var.chinese.given.name.latin <- 'chinese.given.name.latin_example' # character |
 var.known.gender <- 'known.gender_example' # character | 
 
 #Identify Chinese name candidates, based on the romanized name - having a known gender ('male' or 'female')
-result = ChineseApi$ChineseNameGenderCandidates(var.chinese.surname.latin, var.chinese.given.name.latin, var.known.gender)
+api.instance <- ChineseApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$ChineseNameGenderCandidates(var.chinese.surname.latin, var.chinese.given.name.latin, var.known.gender)
 dput(result)
 ```
 

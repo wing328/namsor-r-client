@@ -95,7 +95,7 @@ PersonalApi <- R6::R6Class(
     Country = function(personal.name.full, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/country/{personalNameFull}"
       if (!missing(`personal.name.full`)) {
@@ -103,8 +103,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -126,7 +126,7 @@ PersonalApi <- R6::R6Class(
     CountryBatch = function(batch.personal.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.personal.name.in`)) {
         body <- `batch.personal.name.in`$toJSONString()
@@ -136,8 +136,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/countryBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -159,7 +159,7 @@ PersonalApi <- R6::R6Class(
     Diaspora = function(country.iso2, first.name, last.name, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/diaspora/{countryIso2}/{firstName}/{lastName}"
       if (!missing(`country.iso2`)) {
@@ -175,8 +175,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -198,7 +198,7 @@ PersonalApi <- R6::R6Class(
     DiasporaBatch = function(batch.first.last.name.geo.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.geo.in`)) {
         body <- `batch.first.last.name.geo.in`$toJSONString()
@@ -208,8 +208,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/diasporaBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -231,7 +231,7 @@ PersonalApi <- R6::R6Class(
     Gender = function(first.name, last.name, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/gender/{firstName}/{lastName}"
       if (!missing(`first.name`)) {
@@ -243,8 +243,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -266,7 +266,7 @@ PersonalApi <- R6::R6Class(
     GenderBatch = function(batch.first.last.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.in`)) {
         body <- `batch.first.last.name.in`$toJSONString()
@@ -276,8 +276,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/genderBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -299,7 +299,7 @@ PersonalApi <- R6::R6Class(
     GenderFull = function(full.name, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/genderFull/{fullName}"
       if (!missing(`full.name`)) {
@@ -307,8 +307,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -330,7 +330,7 @@ PersonalApi <- R6::R6Class(
     GenderFullBatch = function(batch.personal.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.personal.name.in`)) {
         body <- `batch.personal.name.in`$toJSONString()
@@ -340,8 +340,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/genderFullBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -363,7 +363,7 @@ PersonalApi <- R6::R6Class(
     GenderFullGeo = function(full.name, country.iso2, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/genderFullGeo/{fullName}/{countryIso2}"
       if (!missing(`full.name`)) {
@@ -375,8 +375,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -398,7 +398,7 @@ PersonalApi <- R6::R6Class(
     GenderFullGeoBatch = function(batch.personal.name.geo.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.personal.name.geo.in`)) {
         body <- `batch.personal.name.geo.in`$toJSONString()
@@ -408,8 +408,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/genderFullGeoBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -431,7 +431,7 @@ PersonalApi <- R6::R6Class(
     GenderGeo = function(first.name, last.name, country.iso2, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/genderGeo/{firstName}/{lastName}/{countryIso2}"
       if (!missing(`first.name`)) {
@@ -447,8 +447,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -470,7 +470,7 @@ PersonalApi <- R6::R6Class(
     GenderGeoBatch = function(batch.first.last.name.geo.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.geo.in`)) {
         body <- `batch.first.last.name.geo.in`$toJSONString()
@@ -480,8 +480,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/genderGeoBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -503,7 +503,7 @@ PersonalApi <- R6::R6Class(
     Origin = function(first.name, last.name, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/origin/{firstName}/{lastName}"
       if (!missing(`first.name`)) {
@@ -515,8 +515,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -538,7 +538,7 @@ PersonalApi <- R6::R6Class(
     OriginBatch = function(batch.first.last.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.in`)) {
         body <- `batch.first.last.name.in`$toJSONString()
@@ -548,8 +548,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/originBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -571,7 +571,7 @@ PersonalApi <- R6::R6Class(
     ParsedGenderBatch = function(batch.parsed.full.name.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.parsed.full.name.in`)) {
         body <- `batch.parsed.full.name.in`$toJSONString()
@@ -581,8 +581,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/parsedGenderBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -604,7 +604,7 @@ PersonalApi <- R6::R6Class(
     ParsedGenderGeoBatch = function(batch.parsed.full.name.geo.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.parsed.full.name.geo.in`)) {
         body <- `batch.parsed.full.name.geo.in`$toJSONString()
@@ -614,8 +614,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/parsedGenderGeoBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -637,7 +637,7 @@ PersonalApi <- R6::R6Class(
     UsRaceEthnicity = function(first.name, last.name, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/usRaceEthnicity/{firstName}/{lastName}"
       if (!missing(`first.name`)) {
@@ -649,8 +649,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -672,7 +672,7 @@ PersonalApi <- R6::R6Class(
     UsRaceEthnicityBatch = function(batch.first.last.name.geo.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.geo.in`)) {
         body <- `batch.first.last.name.geo.in`$toJSONString()
@@ -682,8 +682,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/usRaceEthnicityBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -705,7 +705,7 @@ PersonalApi <- R6::R6Class(
     UsRaceEthnicityZIP5 = function(first.name, last.name, zip5.code, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       urlPath <- "/api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code}"
       if (!missing(`first.name`)) {
@@ -721,8 +721,8 @@ PersonalApi <- R6::R6Class(
       }
 
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
@@ -744,7 +744,7 @@ PersonalApi <- R6::R6Class(
     UsZipRaceEthnicityBatch = function(batch.first.last.name.geo.zipped.in, ...){
       args <- list(...)
       queryParams <- list()
-      headerParams <- character()
+      headerParams <- c()
 
       if (!missing(`batch.first.last.name.geo.zipped.in`)) {
         body <- `batch.first.last.name.geo.zipped.in`$toJSONString()
@@ -754,8 +754,8 @@ PersonalApi <- R6::R6Class(
 
       urlPath <- "/api2/json/usZipRaceEthnicityBatch"
       # API key authentication
-      if ("X-API-KEY" %in% names(self$apiClient$apiKey) && nchar(self$apiClient$apiKey["X-API-KEY"]) > 0) {
-        headerParams['X-API-KEY'] <- self$apiClient$apiKey["X-API-KEY"]
+      if ("X-API-KEY" %in% names(self$apiClient$apiKeys) && nchar(self$apiClient$apiKeys["X-API-KEY"]) > 0) {
+        headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
       resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),

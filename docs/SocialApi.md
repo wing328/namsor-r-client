@@ -22,7 +22,10 @@ var.last.name <- 'last.name_example' # character |
 var.phone.number <- 'phone.number_example' # character | 
 
 #[USES 11 UNITS] Infer the likely country and phone prefix, given a personal name and formatted / unformatted phone number.
-result = SocialApi$PhonePrefix(var.first.name, var.last.name, var.phone.number)
+api.instance <- SocialApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$PhonePrefix(var.first.name, var.last.name, var.phone.number)
 dput(result)
 ```
 
@@ -61,7 +64,10 @@ library(namsor)
 var.batch.first.last.name.phone.number.in <- BatchFirstLastNamePhoneNumberIn$new # BatchFirstLastNamePhoneNumberIn | A list of personal names
 
 #[USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, detecting automatically the local context given a name and formatted / unformatted phone number.
-result = SocialApi$PhonePrefixBatch(batch.first.last.name.phone.number.in=var.batch.first.last.name.phone.number.in)
+api.instance <- SocialApi$new()
+# Configure API key authorization: api_key
+api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+result = api.instance$PhonePrefixBatch(batch.first.last.name.phone.number.in=var.batch.first.last.name.phone.number.in)
 dput(result)
 ```
 
