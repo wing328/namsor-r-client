@@ -41,7 +41,7 @@ var.personal.name.full <- 'personal.name.full_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$Country(var.personal.name.full)
+result <- api.instance$Country(var.personal.name.full)
 dput(result)
 ```
 
@@ -81,7 +81,7 @@ var.batch.personal.name.in <- BatchPersonalNameIn$new() # BatchPersonalNameIn | 
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$CountryBatch(batch.personal.name.in=var.batch.personal.name.in)
+result <- api.instance$CountryBatch(batch.personal.name.in=var.batch.personal.name.in)
 dput(result)
 ```
 
@@ -123,7 +123,7 @@ var.last.name <- 'last.name_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$Diaspora(var.country.iso2, var.first.name, var.last.name)
+result <- api.instance$Diaspora(var.country.iso2, var.first.name, var.last.name)
 dput(result)
 ```
 
@@ -165,7 +165,7 @@ var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new() # BatchFirstLa
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$DiasporaBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
+result <- api.instance$DiasporaBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
 dput(result)
 ```
 
@@ -206,7 +206,7 @@ var.last.name <- 'last.name_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$Gender(var.first.name, var.last.name)
+result <- api.instance$Gender(var.first.name, var.last.name)
 dput(result)
 ```
 
@@ -247,7 +247,7 @@ var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameI
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+result <- api.instance$GenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
 
@@ -287,7 +287,7 @@ var.full.name <- 'full.name_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderFull(var.full.name)
+result <- api.instance$GenderFull(var.full.name)
 dput(result)
 ```
 
@@ -327,7 +327,7 @@ var.batch.personal.name.in <- BatchPersonalNameIn$new() # BatchPersonalNameIn | 
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderFullBatch(batch.personal.name.in=var.batch.personal.name.in)
+result <- api.instance$GenderFullBatch(batch.personal.name.in=var.batch.personal.name.in)
 dput(result)
 ```
 
@@ -368,7 +368,7 @@ var.country.iso2 <- 'country.iso2_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderFullGeo(var.full.name, var.country.iso2)
+result <- api.instance$GenderFullGeo(var.full.name, var.country.iso2)
 dput(result)
 ```
 
@@ -409,7 +409,7 @@ var.batch.personal.name.geo.in <- BatchPersonalNameGeoIn$new() # BatchPersonalNa
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderFullGeoBatch(batch.personal.name.geo.in=var.batch.personal.name.geo.in)
+result <- api.instance$GenderFullGeoBatch(batch.personal.name.geo.in=var.batch.personal.name.geo.in)
 dput(result)
 ```
 
@@ -451,7 +451,7 @@ var.country.iso2 <- 'country.iso2_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderGeo(var.first.name, var.last.name, var.country.iso2)
+result <- api.instance$GenderGeo(var.first.name, var.last.name, var.country.iso2)
 dput(result)
 ```
 
@@ -493,7 +493,7 @@ var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new() # BatchFirstLa
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$GenderGeoBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
+result <- api.instance$GenderGeoBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
 dput(result)
 ```
 
@@ -534,7 +534,7 @@ var.last.name <- 'last.name_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$Origin(var.first.name, var.last.name)
+result <- api.instance$Origin(var.first.name, var.last.name)
 dput(result)
 ```
 
@@ -575,7 +575,7 @@ var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameI
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$OriginBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+result <- api.instance$OriginBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
 
@@ -615,7 +615,7 @@ var.batch.parsed.full.name.in <- BatchParsedFullNameIn$new() # BatchParsedFullNa
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ParsedGenderBatch(batch.parsed.full.name.in=var.batch.parsed.full.name.in)
+result <- api.instance$ParsedGenderBatch(batch.parsed.full.name.in=var.batch.parsed.full.name.in)
 dput(result)
 ```
 
@@ -655,7 +655,7 @@ var.batch.parsed.full.name.geo.in <- BatchParsedFullNameGeoIn$new() # BatchParse
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ParsedGenderGeoBatch(batch.parsed.full.name.geo.in=var.batch.parsed.full.name.geo.in)
+result <- api.instance$ParsedGenderGeoBatch(batch.parsed.full.name.geo.in=var.batch.parsed.full.name.geo.in)
 dput(result)
 ```
 
@@ -696,7 +696,7 @@ var.last.name <- 'last.name_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UsRaceEthnicity(var.first.name, var.last.name)
+result <- api.instance$UsRaceEthnicity(var.first.name, var.last.name)
 dput(result)
 ```
 
@@ -737,7 +737,7 @@ var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new() # BatchFirstLa
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UsRaceEthnicityBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
+result <- api.instance$UsRaceEthnicityBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
 dput(result)
 ```
 
@@ -779,7 +779,7 @@ var.zip5.code <- 'zip5.code_example' # character |
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UsRaceEthnicityZIP5(var.first.name, var.last.name, var.zip5.code)
+result <- api.instance$UsRaceEthnicityZIP5(var.first.name, var.last.name, var.zip5.code)
 dput(result)
 ```
 
@@ -821,7 +821,7 @@ var.batch.first.last.name.geo.zipped.in <- BatchFirstLastNameGeoZippedIn$new() #
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UsZipRaceEthnicityBatch(batch.first.last.name.geo.zipped.in=var.batch.first.last.name.geo.zipped.in)
+result <- api.instance$UsZipRaceEthnicityBatch(batch.first.last.name.geo.zipped.in=var.batch.first.last.name.geo.zipped.in)
 dput(result)
 ```
 

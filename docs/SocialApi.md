@@ -25,7 +25,7 @@ var.phone.number <- 'phone.number_example' # character |
 api.instance <- SocialApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$PhonePrefix(var.first.name, var.last.name, var.phone.number)
+result <- api.instance$PhonePrefix(var.first.name, var.last.name, var.phone.number)
 dput(result)
 ```
 
@@ -67,7 +67,7 @@ var.batch.first.last.name.phone.number.in <- BatchFirstLastNamePhoneNumberIn$new
 api.instance <- SocialApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$PhonePrefixBatch(batch.first.last.name.phone.number.in=var.batch.first.last.name.phone.number.in)
+result <- api.instance$PhonePrefixBatch(batch.first.last.name.phone.number.in=var.batch.first.last.name.phone.number.in)
 dput(result)
 ```
 

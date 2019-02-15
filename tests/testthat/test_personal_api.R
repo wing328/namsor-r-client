@@ -191,8 +191,30 @@ test_that("OriginBatch", {
   # @param BatchFirstLastNameIn  batch.first.last.name.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameOriginedOut]
 
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
+  var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameIn | A list of personal names
+  var.batch.first.last.name.in$personalNames <- list(FirstLastNameIn$new("1", "William", "Cheng"),
+                                                         FirstLastNameIn$new("2", "Elian", "Carsenat"))
+  api.instance <- PersonalApi$new()
+  api.instance$apiClient$apiKeys['X-API-KEY'] <- Sys.getenv("API_KEY")
+  result <- api.instance$OriginBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+
+  expect_equal(result$personalNames[[1]]$firstName, "William")
+  expect_equal(result$personalNames[[1]]$lastName, "Cheng")
+  expect_gt(result$personalNames[[1]]$score, 3.0)
+  expect_equal(result$personalNames[[1]]$countryOrigin, "TW")
+  expect_equal(result$personalNames[[1]]$countryOriginAlt, "CN")
+  expect_equal(result$personalNames[[1]]$regionOrigin, "Asia")
+  expect_equal(result$personalNames[[1]]$topRegionOrigin, "Asia")
+  expect_equal(result$personalNames[[1]]$subRegionOrigin, "Eastern Asia")
+
+  expect_equal(result$personalNames[[2]]$firstName, "Elian")
+  expect_equal(result$personalNames[[2]]$lastName, "Carsenat")
+  expect_gt(result$personalNames[[2]]$score, 15)
+  expect_equal(result$personalNames[[2]]$countryOrigin, "FR")
+  expect_equal(result$personalNames[[2]]$countryOriginAlt, "IL")
+  expect_equal(result$personalNames[[2]]$regionOrigin, "Europe")
+  expect_equal(result$personalNames[[2]]$topRegionOrigin, "Europe")
+  expect_equal(result$personalNames[[2]]$subRegionOrigin, "Western Europe")
 })
 
 test_that("ParsedGenderBatch", {

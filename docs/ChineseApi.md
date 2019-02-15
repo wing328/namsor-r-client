@@ -26,7 +26,7 @@ var.chinese.given.name.latin <- 'chinese.given.name.latin_example' # character |
 api.instance <- ChineseApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ChineseNameCandidates(var.chinese.surname.latin, var.chinese.given.name.latin)
+result <- api.instance$ChineseNameCandidates(var.chinese.surname.latin, var.chinese.given.name.latin)
 dput(result)
 ```
 
@@ -67,7 +67,7 @@ var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameI
 api.instance <- ChineseApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ChineseNameCandidatesBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+result <- api.instance$ChineseNameCandidatesBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
 
@@ -107,7 +107,7 @@ var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameI
 api.instance <- ChineseApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ChineseNameCandidatesGenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
+result <- api.instance$ChineseNameCandidatesGenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
 
@@ -149,7 +149,7 @@ var.known.gender <- 'known.gender_example' # character |
 api.instance <- ChineseApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ChineseNameGenderCandidates(var.chinese.surname.latin, var.chinese.given.name.latin, var.known.gender)
+result <- api.instance$ChineseNameGenderCandidates(var.chinese.surname.latin, var.chinese.given.name.latin, var.known.gender)
 dput(result)
 ```
 

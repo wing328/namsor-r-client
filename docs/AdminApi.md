@@ -52,7 +52,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ApiUsage()
+result <- api.instance$ApiUsage()
 dput(result)
 ```
 
@@ -88,7 +88,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ApiUsageHistory()
+result <- api.instance$ApiUsageHistory()
 dput(result)
 ```
 
@@ -124,7 +124,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ApiUsageHistoryAggregate()
+result <- api.instance$ApiUsageHistoryAggregate()
 dput(result)
 ```
 
@@ -160,7 +160,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$AvailablePlans()
+result <- api.instance$AvailablePlans()
 dput(result)
 ```
 
@@ -197,7 +197,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$AvailablePlans1(var.token)
+result <- api.instance$AvailablePlans1(var.token)
 dput(result)
 ```
 
@@ -236,7 +236,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$AvailableServices()
+result <- api.instance$AvailableServices()
 dput(result)
 ```
 
@@ -272,7 +272,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$BillingCurrencies()
+result <- api.instance$BillingCurrencies()
 dput(result)
 ```
 
@@ -309,7 +309,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$BillingHistory(var.token)
+result <- api.instance$BillingHistory(var.token)
 dput(result)
 ```
 
@@ -349,7 +349,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$BillingInfo(var.token)
+result <- api.instance$BillingInfo(var.token)
 dput(result)
 ```
 
@@ -389,7 +389,7 @@ var.inline.object <- InlineObject$new() # InlineObject |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$Charge(inline.object=var.inline.object)
+result <- api.instance$Charge(inline.object=var.inline.object)
 dput(result)
 ```
 
@@ -545,7 +545,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$NamsorCounter()
+result <- api.instance$NamsorCounter()
 dput(result)
 ```
 
@@ -582,7 +582,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$PaymentInfo(var.token)
+result <- api.instance$PaymentInfo(var.token)
 dput(result)
 ```
 
@@ -622,7 +622,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$ProcureKey(var.token)
+result <- api.instance$ProcureKey(var.token)
 dput(result)
 ```
 
@@ -736,7 +736,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$RemoveUserAccount(var.token)
+result <- api.instance$RemoveUserAccount(var.token)
 dput(result)
 ```
 
@@ -810,7 +810,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$SoftwareVersion()
+result <- api.instance$SoftwareVersion()
 dput(result)
 ```
 
@@ -847,7 +847,7 @@ var.source <- 'source_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$SourceStats(var.source)
+result <- api.instance$SourceStats(var.source)
 dput(result)
 ```
 
@@ -886,7 +886,7 @@ library(namsor)
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$Stats()
+result <- api.instance$Stats()
 dput(result)
 ```
 
@@ -969,7 +969,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$SubscribePlan(var.plan.name, var.token)
+result <- api.instance$SubscribePlan(var.plan.name, var.token)
 dput(result)
 ```
 
@@ -1011,7 +1011,7 @@ var.billing.info.in.out <- BillingInfoInOut$new() # BillingInfoInOut |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UpdateBillingInfo(var.token, billing.info.in.out=var.billing.info.in.out)
+result <- api.instance$UpdateBillingInfo(var.token, billing.info.in.out=var.billing.info.in.out)
 dput(result)
 ```
 
@@ -1054,7 +1054,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UpdateLimit(var.usage.limit, var.hard.or.soft, var.token)
+result <- api.instance$UpdateLimit(var.usage.limit, var.hard.or.soft, var.token)
 dput(result)
 ```
 
@@ -1097,7 +1097,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UpdatePaymentDefault(var.defaut.source.id, var.token)
+result <- api.instance$UpdatePaymentDefault(var.defaut.source.id, var.token)
 dput(result)
 ```
 
@@ -1138,7 +1138,7 @@ var.token <- 'token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$UserInfo(var.token)
+result <- api.instance$UserInfo(var.token)
 dput(result)
 ```
 
@@ -1178,7 +1178,7 @@ var.email.token <- 'email.token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$VerifyEmail(var.email.token)
+result <- api.instance$VerifyEmail(var.email.token)
 dput(result)
 ```
 
@@ -1218,7 +1218,7 @@ var.email.token <- 'email.token_example' # character |
 api.instance <- AdminApi$new()
 # Configure API key authorization: api_key
 api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
-result = api.instance$VerifyRemoveEmail(var.email.token)
+result <- api.instance$VerifyRemoveEmail(var.email.token)
 dput(result)
 ```
 
