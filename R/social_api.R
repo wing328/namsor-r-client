@@ -43,6 +43,18 @@ SocialApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
+      if (missing(`phone.number`)) {
+        stop("Missing required parameter `phone.number`.")
+      }
+
       urlPath <- "/api2/json/phoneCode/{firstName}/{lastName}/{phoneNumber}"
       if (!missing(`first.name`)) {
         urlPath <- gsub(paste0("\\{", "firstName", "\\}"), `first.name`, urlPath)
@@ -61,7 +73,7 @@ SocialApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -77,7 +89,7 @@ SocialApi <- R6::R6Class(
       }
 
     },
-    PhonePrefixBatch = function(batch.first.last.name.phone.number.in, ...){
+    PhonePrefixBatch = function(batch.first.last.name.phone.number.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -94,7 +106,7 @@ SocialApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,

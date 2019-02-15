@@ -97,6 +97,10 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`personal.name.full`)) {
+        stop("Missing required parameter `personal.name.full`.")
+      }
+
       urlPath <- "/api2/json/country/{personalNameFull}"
       if (!missing(`personal.name.full`)) {
         urlPath <- gsub(paste0("\\{", "personalNameFull", "\\}"), `personal.name.full`, urlPath)
@@ -107,7 +111,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -123,7 +127,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    CountryBatch = function(batch.personal.name.in, ...){
+    CountryBatch = function(batch.personal.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -140,7 +144,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -161,6 +165,18 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`country.iso2`)) {
+        stop("Missing required parameter `country.iso2`.")
+      }
+
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
       urlPath <- "/api2/json/diaspora/{countryIso2}/{firstName}/{lastName}"
       if (!missing(`country.iso2`)) {
         urlPath <- gsub(paste0("\\{", "countryIso2", "\\}"), `country.iso2`, urlPath)
@@ -179,7 +195,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -195,7 +211,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    DiasporaBatch = function(batch.first.last.name.geo.in, ...){
+    DiasporaBatch = function(batch.first.last.name.geo.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -212,7 +228,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -233,6 +249,14 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
       urlPath <- "/api2/json/gender/{firstName}/{lastName}"
       if (!missing(`first.name`)) {
         urlPath <- gsub(paste0("\\{", "firstName", "\\}"), `first.name`, urlPath)
@@ -247,7 +271,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -263,7 +287,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    GenderBatch = function(batch.first.last.name.in, ...){
+    GenderBatch = function(batch.first.last.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -280,7 +304,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -301,6 +325,10 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`full.name`)) {
+        stop("Missing required parameter `full.name`.")
+      }
+
       urlPath <- "/api2/json/genderFull/{fullName}"
       if (!missing(`full.name`)) {
         urlPath <- gsub(paste0("\\{", "fullName", "\\}"), `full.name`, urlPath)
@@ -311,7 +339,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -327,7 +355,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    GenderFullBatch = function(batch.personal.name.in, ...){
+    GenderFullBatch = function(batch.personal.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -344,7 +372,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -365,6 +393,14 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`full.name`)) {
+        stop("Missing required parameter `full.name`.")
+      }
+
+      if (missing(`country.iso2`)) {
+        stop("Missing required parameter `country.iso2`.")
+      }
+
       urlPath <- "/api2/json/genderFullGeo/{fullName}/{countryIso2}"
       if (!missing(`full.name`)) {
         urlPath <- gsub(paste0("\\{", "fullName", "\\}"), `full.name`, urlPath)
@@ -379,7 +415,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -395,7 +431,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    GenderFullGeoBatch = function(batch.personal.name.geo.in, ...){
+    GenderFullGeoBatch = function(batch.personal.name.geo.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -412,7 +448,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -433,6 +469,18 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
+      if (missing(`country.iso2`)) {
+        stop("Missing required parameter `country.iso2`.")
+      }
+
       urlPath <- "/api2/json/genderGeo/{firstName}/{lastName}/{countryIso2}"
       if (!missing(`first.name`)) {
         urlPath <- gsub(paste0("\\{", "firstName", "\\}"), `first.name`, urlPath)
@@ -451,7 +499,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -467,7 +515,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    GenderGeoBatch = function(batch.first.last.name.geo.in, ...){
+    GenderGeoBatch = function(batch.first.last.name.geo.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -484,7 +532,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -505,6 +553,14 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
       urlPath <- "/api2/json/origin/{firstName}/{lastName}"
       if (!missing(`first.name`)) {
         urlPath <- gsub(paste0("\\{", "firstName", "\\}"), `first.name`, urlPath)
@@ -519,7 +575,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -535,7 +591,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    OriginBatch = function(batch.first.last.name.in, ...){
+    OriginBatch = function(batch.first.last.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -552,7 +608,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -568,7 +624,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    ParsedGenderBatch = function(batch.parsed.full.name.in, ...){
+    ParsedGenderBatch = function(batch.parsed.full.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -585,7 +641,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -601,7 +657,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    ParsedGenderGeoBatch = function(batch.parsed.full.name.geo.in, ...){
+    ParsedGenderGeoBatch = function(batch.parsed.full.name.geo.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -618,7 +674,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -639,6 +695,14 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
       urlPath <- "/api2/json/usRaceEthnicity/{firstName}/{lastName}"
       if (!missing(`first.name`)) {
         urlPath <- gsub(paste0("\\{", "firstName", "\\}"), `first.name`, urlPath)
@@ -653,7 +717,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -669,7 +733,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    UsRaceEthnicityBatch = function(batch.first.last.name.geo.in, ...){
+    UsRaceEthnicityBatch = function(batch.first.last.name.geo.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -686,7 +750,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -707,6 +771,18 @@ PersonalApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`first.name`)) {
+        stop("Missing required parameter `first.name`.")
+      }
+
+      if (missing(`last.name`)) {
+        stop("Missing required parameter `last.name`.")
+      }
+
+      if (missing(`zip5.code`)) {
+        stop("Missing required parameter `zip5.code`.")
+      }
+
       urlPath <- "/api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code}"
       if (!missing(`first.name`)) {
         urlPath <- gsub(paste0("\\{", "firstName", "\\}"), `first.name`, urlPath)
@@ -725,7 +801,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -741,7 +817,7 @@ PersonalApi <- R6::R6Class(
       }
 
     },
-    UsZipRaceEthnicityBatch = function(batch.first.last.name.geo.zipped.in, ...){
+    UsZipRaceEthnicityBatch = function(batch.first.last.name.geo.zipped.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -758,7 +834,7 @@ PersonalApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,

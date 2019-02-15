@@ -139,7 +139,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -166,7 +166,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -193,7 +193,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -220,7 +220,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -241,6 +241,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/availablePlans/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -251,7 +255,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -278,7 +282,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -305,7 +309,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -326,6 +330,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/billingHistory/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -336,7 +344,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -357,6 +365,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/billingInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -367,7 +379,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -383,7 +395,7 @@ AdminApi <- R6::R6Class(
       }
 
     },
-    Charge = function(inline.object, ...){
+    Charge = function(inline.object=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -400,7 +412,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -421,6 +433,14 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`api.key`)) {
+        stop("Missing required parameter `api.key`.")
+      }
+
+      if (missing(`corporate`)) {
+        stop("Missing required parameter `corporate`.")
+      }
+
       urlPath <- "/api2/json/corporateKey/{apiKey}/{corporate}"
       if (!missing(`api.key`)) {
         urlPath <- gsub(paste0("\\{", "apiKey", "\\}"), `api.key`, urlPath)
@@ -435,7 +455,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -456,6 +476,14 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`logger`)) {
+        stop("Missing required parameter `logger`.")
+      }
+
+      if (missing(`level`)) {
+        stop("Missing required parameter `level`.")
+      }
+
       urlPath <- "/api2/json/debugLevel/{logger}/{level}"
       if (!missing(`logger`)) {
         urlPath <- gsub(paste0("\\{", "logger", "\\}"), `logger`, urlPath)
@@ -470,7 +498,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -497,7 +525,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -524,7 +552,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -545,6 +573,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/paymentInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -555,7 +587,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -576,6 +608,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/procureKey/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -586,7 +622,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -613,7 +649,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -634,6 +670,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`live`)) {
+        stop("Missing required parameter `live`.")
+      }
+
       urlPath <- "/api2/json/redeployUI/{live}"
       if (!missing(`live`)) {
         urlPath <- gsub(paste0("\\{", "live", "\\}"), `live`, urlPath)
@@ -644,7 +684,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -665,6 +705,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/removeUserAccount/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -675,7 +719,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -702,7 +746,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -729,7 +773,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -750,6 +794,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`source`)) {
+        stop("Missing required parameter `source`.")
+      }
+
       urlPath <- "/api2/json/sourceStats/{source}"
       if (!missing(`source`)) {
         urlPath <- gsub(paste0("\\{", "source", "\\}"), `source`, urlPath)
@@ -760,7 +808,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -787,7 +835,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -803,26 +851,18 @@ AdminApi <- R6::R6Class(
       }
 
     },
-    StripeConnect = function(scope, code, error, error.description, ...){
+    StripeConnect = function(scope=NULL, code=NULL, error=NULL, error.description=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
 
-      if (!missing(`scope`)) {
-        queryParams['scope'] <- scope
-      }
+      queryParams['scope'] <- scope
 
-      if (!missing(`code`)) {
-        queryParams['code'] <- code
-      }
+      queryParams['code'] <- code
 
-      if (!missing(`error`)) {
-        queryParams['error'] <- error
-      }
+      queryParams['error'] <- error
 
-      if (!missing(`error.description`)) {
-        queryParams['error_description'] <- error.description
-      }
+      queryParams['error_description'] <- error.description
 
       urlPath <- "/api2/json/stripeConnect"
       # API key authentication
@@ -830,7 +870,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -851,6 +891,14 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`plan.name`)) {
+        stop("Missing required parameter `plan.name`.")
+      }
+
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/subscribePlan/{planName}/{token}"
       if (!missing(`plan.name`)) {
         urlPath <- gsub(paste0("\\{", "planName", "\\}"), `plan.name`, urlPath)
@@ -865,7 +913,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -881,10 +929,14 @@ AdminApi <- R6::R6Class(
       }
 
     },
-    UpdateBillingInfo = function(token, billing.info.in.out, ...){
+    UpdateBillingInfo = function(token, billing.info.in.out=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
+
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
 
       if (!missing(`billing.info.in.out`)) {
         body <- `billing.info.in.out`$toJSONString()
@@ -902,7 +954,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -923,6 +975,18 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`usage.limit`)) {
+        stop("Missing required parameter `usage.limit`.")
+      }
+
+      if (missing(`hard.or.soft`)) {
+        stop("Missing required parameter `hard.or.soft`.")
+      }
+
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/updateLimit/{usageLimit}/{hardOrSoft}/{token}"
       if (!missing(`usage.limit`)) {
         urlPath <- gsub(paste0("\\{", "usageLimit", "\\}"), `usage.limit`, urlPath)
@@ -941,7 +1005,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -962,6 +1026,14 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`defaut.source.id`)) {
+        stop("Missing required parameter `defaut.source.id`.")
+      }
+
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/updatePaymentDefault/{defautSourceId}/{token}"
       if (!missing(`defaut.source.id`)) {
         urlPath <- gsub(paste0("\\{", "defautSourceId", "\\}"), `defaut.source.id`, urlPath)
@@ -976,7 +1048,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -997,6 +1069,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`token`)) {
+        stop("Missing required parameter `token`.")
+      }
+
       urlPath <- "/api2/json/userInfo/{token}"
       if (!missing(`token`)) {
         urlPath <- gsub(paste0("\\{", "token", "\\}"), `token`, urlPath)
@@ -1007,7 +1083,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -1028,6 +1104,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`email.token`)) {
+        stop("Missing required parameter `email.token`.")
+      }
+
       urlPath <- "/api2/json/verifyEmail/{emailToken}"
       if (!missing(`email.token`)) {
         urlPath <- gsub(paste0("\\{", "emailToken", "\\}"), `email.token`, urlPath)
@@ -1038,7 +1118,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -1059,6 +1139,10 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`email.token`)) {
+        stop("Missing required parameter `email.token`.")
+      }
+
       urlPath <- "/api2/json/verifyRemoveEmail/{emailToken}"
       if (!missing(`email.token`)) {
         urlPath <- gsub(paste0("\\{", "emailToken", "\\}"), `email.token`, urlPath)
@@ -1069,7 +1153,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -1090,6 +1174,14 @@ AdminApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`source`)) {
+        stop("Missing required parameter `source`.")
+      }
+
+      if (missing(`vetted`)) {
+        stop("Missing required parameter `vetted`.")
+      }
+
       urlPath <- "/api2/json/vetting/{source}/{vetted}"
       if (!missing(`source`)) {
         urlPath <- gsub(paste0("\\{", "source", "\\}"), `source`, urlPath)
@@ -1104,7 +1196,7 @@ AdminApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,

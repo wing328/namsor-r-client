@@ -49,6 +49,14 @@ ChineseApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`chinese.surname.latin`)) {
+        stop("Missing required parameter `chinese.surname.latin`.")
+      }
+
+      if (missing(`chinese.given.name.latin`)) {
+        stop("Missing required parameter `chinese.given.name.latin`.")
+      }
+
       urlPath <- "/api2/json/chineseNameCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}"
       if (!missing(`chinese.surname.latin`)) {
         urlPath <- gsub(paste0("\\{", "chineseSurnameLatin", "\\}"), `chinese.surname.latin`, urlPath)
@@ -63,7 +71,7 @@ ChineseApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -79,7 +87,7 @@ ChineseApi <- R6::R6Class(
       }
 
     },
-    ChineseNameCandidatesBatch = function(batch.first.last.name.in, ...){
+    ChineseNameCandidatesBatch = function(batch.first.last.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -96,7 +104,7 @@ ChineseApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -112,7 +120,7 @@ ChineseApi <- R6::R6Class(
       }
 
     },
-    ChineseNameCandidatesGenderBatch = function(batch.first.last.name.in, ...){
+    ChineseNameCandidatesGenderBatch = function(batch.first.last.name.in=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -129,7 +137,7 @@ ChineseApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "POST",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -150,6 +158,18 @@ ChineseApi <- R6::R6Class(
       queryParams <- list()
       headerParams <- c()
 
+      if (missing(`chinese.surname.latin`)) {
+        stop("Missing required parameter `chinese.surname.latin`.")
+      }
+
+      if (missing(`chinese.given.name.latin`)) {
+        stop("Missing required parameter `chinese.given.name.latin`.")
+      }
+
+      if (missing(`known.gender`)) {
+        stop("Missing required parameter `known.gender`.")
+      }
+
       urlPath <- "/api2/json/chineseNameGenderCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}/{knownGender}"
       if (!missing(`chinese.surname.latin`)) {
         urlPath <- gsub(paste0("\\{", "chineseSurnameLatin", "\\}"), `chinese.surname.latin`, urlPath)
@@ -168,7 +188,7 @@ ChineseApi <- R6::R6Class(
         headerParams['X-API-KEY'] <- paste(unlist(self$apiClient$apiKeys["X-API-KEY"]), collapse='')
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$apiClient$CallApi(url = paste0(self$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
