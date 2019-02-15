@@ -59,8 +59,15 @@ test_that("Gender", {
   # @param character  last.name   
   # @return [FirstLastNameGenderedOut]
 
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
+  api.instance$apiClient$apiKeys['X-API-KEY'] <- Sys.getenv("API_KEY")
+  result <- api.instance$Gender("William", "Cheng")
+
+  expect_equal(result$firstName, "William")
+  expect_equal(result$lastName, "Cheng")
+  expect_equal(result$genderScale, -1)
+  expect_equal(result$likelyGender, "male")
+  expect_gt(result$score, 6.0)
+
 })
 
 test_that("GenderBatch", {
@@ -128,8 +135,14 @@ test_that("GenderGeo", {
   # @param character  country.iso2   
   # @return [FirstLastNameGenderedOut]
 
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
+  api.instance$apiClient$apiKeys['X-API-KEY'] <- Sys.getenv("API_KEY")
+  result <- api.instance$GenderGeo("William", "Cheng", "US")
+
+  expect_equal(result$firstName, "William")
+  expect_equal(result$lastName, "Cheng")
+  expect_equal(result$genderScale, -1)
+  expect_equal(result$likelyGender, "male")
+  expect_gt(result$score, 6.0)
 })
 
 test_that("GenderGeoBatch", {
