@@ -4,12 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **character** |  | [optional] 
-**latin_name** | **character** |  | [optional] 
-**original_name** | **character** |  | [optional] 
-**source_language** | **character** |  | [optional] 
-**target_language** | **character** |  | [optional] 
-**source_script** | **character** |  | [optional] 
-**target_script** | **character** |  | [optional] 
+**latinName** | **character** |  | [optional] 
+**originalName** | **character** |  | [optional] 
+**sourceLanguage** | **character** |  | [optional] 
+**targetLanguage** | **character** |  | [optional] 
+**sourceScript** | **character** |  | [optional] 
+**targetScript** | **character** |  | [optional] 
 **score** | **numeric** |  | [optional] 
 
 

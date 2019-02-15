@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_names** | [**FirstLastNameGeoIn**](FirstLastNameGeoIn.md) |  | [optional] 
+**personalNames** | [**FirstLastNameGeoIn**](FirstLastNameGeoIn.md) |  | [optional] 
 
 

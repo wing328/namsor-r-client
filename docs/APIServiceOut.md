@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**service_name** | **character** |  | [optional] 
-**service_group** | **character** |  | [optional] 
-**cost_in_units** | **integer** |  | [optional] 
+**serviceName** | **character** |  | [optional] 
+**serviceGroup** | **character** |  | [optional] 
+**costInUnits** | **integer** |  | [optional] 
 
 

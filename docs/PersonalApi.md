@@ -40,7 +40,7 @@ var.personal.name.full <- 'personal.name.full_example' # character |
 #[USES 10 UNITS] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$Country(var.personal.name.full)
 dput(result)
 ```
@@ -75,12 +75,12 @@ Name | Type | Description  | Notes
 ```R
 library(namsor)
 
-var.batch.personal.name.in <- BatchPersonalNameIn$new # BatchPersonalNameIn | A list of personal names
+var.batch.personal.name.in <- BatchPersonalNameIn$new() # BatchPersonalNameIn | A list of personal names
 
 #[USES 10 UNITS] Infer the likely country of residence of up to 1000 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$CountryBatch(batch.personal.name.in=var.batch.personal.name.in)
 dput(result)
 ```
@@ -122,7 +122,7 @@ var.last.name <- 'last.name_example' # character |
 #[USES 20 UNITS] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$Diaspora(var.country.iso2, var.first.name, var.last.name)
 dput(result)
 ```
@@ -159,12 +159,12 @@ Name | Type | Description  | Notes
 ```R
 library(namsor)
 
-var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new # BatchFirstLastNameGeoIn | A list of personal names
+var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new() # BatchFirstLastNameGeoIn | A list of personal names
 
 #[USES 20 UNITS] Infer the likely ethnicity/diaspora of up to 1000 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$DiasporaBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
 dput(result)
 ```
@@ -205,7 +205,7 @@ var.last.name <- 'last.name_example' # character |
 #Infer the likely gender of a name.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$Gender(var.first.name, var.last.name)
 dput(result)
 ```
@@ -241,12 +241,12 @@ Infer the likely gender of up to 1000 names, detecting automatically the cultura
 ```R
 library(namsor)
 
-var.batch.first.last.name.in <- BatchFirstLastNameIn$new # BatchFirstLastNameIn | A list of personal names
+var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameIn | A list of personal names
 
 #Infer the likely gender of up to 1000 names, detecting automatically the cultural context.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
@@ -286,7 +286,7 @@ var.full.name <- 'full.name_example' # character |
 #Infer the likely gender of a full name, ex. John H. Smith
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderFull(var.full.name)
 dput(result)
 ```
@@ -321,12 +321,12 @@ Infer the likely gender of up to 1000 full names, detecting automatically the cu
 ```R
 library(namsor)
 
-var.batch.personal.name.in <- BatchPersonalNameIn$new # BatchPersonalNameIn | A list of personal names
+var.batch.personal.name.in <- BatchPersonalNameIn$new() # BatchPersonalNameIn | A list of personal names
 
 #Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderFullBatch(batch.personal.name.in=var.batch.personal.name.in)
 dput(result)
 ```
@@ -367,7 +367,7 @@ var.country.iso2 <- 'country.iso2_example' # character |
 #Infer the likely gender of a full name, given a local context (ISO2 country code).
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderFullGeo(var.full.name, var.country.iso2)
 dput(result)
 ```
@@ -403,12 +403,12 @@ Infer the likely gender of up to 1000 full names, with a given cultural context 
 ```R
 library(namsor)
 
-var.batch.personal.name.geo.in <- BatchPersonalNameGeoIn$new # BatchPersonalNameGeoIn | A list of personal names, with a country ISO2 code
+var.batch.personal.name.geo.in <- BatchPersonalNameGeoIn$new() # BatchPersonalNameGeoIn | A list of personal names, with a country ISO2 code
 
 #Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderFullGeoBatch(batch.personal.name.geo.in=var.batch.personal.name.geo.in)
 dput(result)
 ```
@@ -450,7 +450,7 @@ var.country.iso2 <- 'country.iso2_example' # character |
 #Infer the likely gender of a name, given a local context (ISO2 country code).
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderGeo(var.first.name, var.last.name, var.country.iso2)
 dput(result)
 ```
@@ -487,12 +487,12 @@ Infer the likely gender of up to 1000 names, each given a local context (ISO2 co
 ```R
 library(namsor)
 
-var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new # BatchFirstLastNameGeoIn | A list of names, with country code.
+var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new() # BatchFirstLastNameGeoIn | A list of names, with country code.
 
 #Infer the likely gender of up to 1000 names, each given a local context (ISO2 country code).
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$GenderGeoBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
 dput(result)
 ```
@@ -533,7 +533,7 @@ var.last.name <- 'last.name_example' # character |
 #[USES 10 UNITS] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use 'diaspora' instead.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$Origin(var.first.name, var.last.name)
 dput(result)
 ```
@@ -569,12 +569,12 @@ Name | Type | Description  | Notes
 ```R
 library(namsor)
 
-var.batch.first.last.name.in <- BatchFirstLastNameIn$new # BatchFirstLastNameIn | A list of personal names
+var.batch.first.last.name.in <- BatchFirstLastNameIn$new() # BatchFirstLastNameIn | A list of personal names
 
 #[USES 10 UNITS] Infer the likely country of origin of up to 1000 names, detecting automatically the cultural context.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$OriginBatch(batch.first.last.name.in=var.batch.first.last.name.in)
 dput(result)
 ```
@@ -609,12 +609,12 @@ Infer the likely gender of up to 1000 fully parsed names, detecting automaticall
 ```R
 library(namsor)
 
-var.batch.parsed.full.name.in <- BatchParsedFullNameIn$new # BatchParsedFullNameIn | A list of personal names
+var.batch.parsed.full.name.in <- BatchParsedFullNameIn$new() # BatchParsedFullNameIn | A list of personal names
 
 #Infer the likely gender of up to 1000 fully parsed names, detecting automatically the cultural context.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$ParsedGenderBatch(batch.parsed.full.name.in=var.batch.parsed.full.name.in)
 dput(result)
 ```
@@ -649,12 +649,12 @@ Infer the likely gender of up to 1000 fully parsed names, detecting automaticall
 ```R
 library(namsor)
 
-var.batch.parsed.full.name.geo.in <- BatchParsedFullNameGeoIn$new # BatchParsedFullNameGeoIn | A list of personal names
+var.batch.parsed.full.name.geo.in <- BatchParsedFullNameGeoIn$new() # BatchParsedFullNameGeoIn | A list of personal names
 
 #Infer the likely gender of up to 1000 fully parsed names, detecting automatically the cultural context.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$ParsedGenderGeoBatch(batch.parsed.full.name.geo.in=var.batch.parsed.full.name.geo.in)
 dput(result)
 ```
@@ -695,7 +695,7 @@ var.last.name <- 'last.name_example' # character |
 #[USES 10 UNITS] Infer a US resident's likely race/ethnicity according to US Census taxonomy.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$UsRaceEthnicity(var.first.name, var.last.name)
 dput(result)
 ```
@@ -731,12 +731,12 @@ Name | Type | Description  | Notes
 ```R
 library(namsor)
 
-var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new # BatchFirstLastNameGeoIn | A list of personal names
+var.batch.first.last.name.geo.in <- BatchFirstLastNameGeoIn$new() # BatchFirstLastNameGeoIn | A list of personal names
 
 #[USES 10 UNITS] Infer up-to 1000 US resident's likely race/ethnicity according to US Census taxonomy.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$UsRaceEthnicityBatch(batch.first.last.name.geo.in=var.batch.first.last.name.geo.in)
 dput(result)
 ```
@@ -778,7 +778,7 @@ var.zip5.code <- 'zip5.code_example' # character |
 #[USES 10 UNITS] Infer a US resident's likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$UsRaceEthnicityZIP5(var.first.name, var.last.name, var.zip5.code)
 dput(result)
 ```
@@ -815,12 +815,12 @@ Name | Type | Description  | Notes
 ```R
 library(namsor)
 
-var.batch.first.last.name.geo.zipped.in <- BatchFirstLastNameGeoZippedIn$new # BatchFirstLastNameGeoZippedIn | A list of personal names
+var.batch.first.last.name.geo.zipped.in <- BatchFirstLastNameGeoZippedIn$new() # BatchFirstLastNameGeoZippedIn | A list of personal names
 
 #[USES 10 UNITS] Infer up-to 1000 US resident's likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code.
 api.instance <- PersonalApi$new()
 # Configure API key authorization: api_key
-api.instance$apiClient$apiKey['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
+api.instance$apiClient$apiKeys['X-API-KEY'] <- 'TODO_YOUR_API_KEY';
 result = api.instance$UsZipRaceEthnicityBatch(batch.first.last.name.geo.zipped.in=var.batch.first.last.name.geo.zipped.in)
 dput(result)
 ```

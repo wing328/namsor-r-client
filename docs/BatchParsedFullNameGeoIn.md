@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_names** | [**ParsedFullNameGeoIn**](ParsedFullNameGeoIn.md) |  | [optional] 
+**personalNames** | [**ParsedFullNameGeoIn**](ParsedFullNameGeoIn.md) |  | [optional] 
 
 

@@ -4,11 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **character** |  | [optional] 
-**first_name** | **character** |  | [optional] 
-**last_name** | **character** |  | [optional] 
+**firstName** | **character** |  | [optional] 
+**lastName** | **character** |  | [optional] 
 **score** | **numeric** | Compatibility to NamSor_v1 Origin score value | [optional] 
-**ethnicity_alt** | **character** |  | [optional] 
+**ethnicityAlt** | **character** |  | [optional] 
 **ethnicity** | **character** |  | [optional] 
-**country_iso2** | **character** |  | [optional] 
+**countryIso2** | **character** |  | [optional] 
 
 

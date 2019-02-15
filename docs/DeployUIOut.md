@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_message** | **character** |  | [optional] 
+**errorMessage** | **character** |  | [optional] 
 **succeeded** | **character** |  | [optional] 
 
 

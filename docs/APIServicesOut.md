@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_services** | [**APIServiceOut**](APIServiceOut.md) |  | [optional] 
+**apiServices** | [**APIServiceOut**](APIServiceOut.md) |  | [optional] 
 
 

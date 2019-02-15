@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **character** |  | [optional] 
-**first_name** | **character** |  | [optional] 
-**last_name** | **character** |  | [optional] 
+**firstName** | **character** |  | [optional] 
+**lastName** | **character** |  | [optional] 
 
 

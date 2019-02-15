@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currencies_iso3** | **character** |  | [optional] 
+**currenciesIso3** | **character** |  | [optional] 
 
 

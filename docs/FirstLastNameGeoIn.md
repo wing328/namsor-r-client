@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **character** |  | [optional] 
-**first_name** | **character** |  | [optional] 
-**last_name** | **character** |  | [optional] 
-**country_iso2** | **character** |  | [optional] 
+**firstName** | **character** |  | [optional] 
+**lastName** | **character** |  | [optional] 
+**countryIso2** | **character** |  | [optional] 
 
 

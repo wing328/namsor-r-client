@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_names** | [**ParsedFullNameIn**](ParsedFullNameIn.md) |  | [optional] 
+**personalNames** | [**ParsedFullNameIn**](ParsedFullNameIn.md) |  | [optional] 
 
 

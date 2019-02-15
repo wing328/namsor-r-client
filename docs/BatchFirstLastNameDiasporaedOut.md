@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_names** | [**FirstLastNameDiasporaedOut**](FirstLastNameDiasporaedOut.md) |  | [optional] 
+**personalNames** | [**FirstLastNameDiasporaedOut**](FirstLastNameDiasporaedOut.md) |  | [optional] 
 
 

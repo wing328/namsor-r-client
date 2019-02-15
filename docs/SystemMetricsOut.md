@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**classifier_metrics** | [**ClassifierMetricsOut**](ClassifierMetricsOut.md) |  | [optional] 
-**source_metrics** | [**SourceMetricsOut**](SourceMetricsOut.md) |  | [optional] 
-**total_mem** | **integer** |  | [optional] 
-**free_mem** | **integer** |  | [optional] 
-**max_mem** | **integer** |  | [optional] 
+**classifierMetrics** | [**ClassifierMetricsOut**](ClassifierMetricsOut.md) |  | [optional] 
+**sourceMetrics** | [**SourceMetricsOut**](SourceMetricsOut.md) |  | [optional] 
+**totalMem** | **integer** |  | [optional] 
+**freeMem** | **integer** |  | [optional] 
+**maxMem** | **integer** |  | [optional] 
 
 

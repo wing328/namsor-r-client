@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**stripe_customer_id** | **character** |  | [optional] 
-**source_country** | **character** |  | [optional] 
-**source_currency** | **character** |  | [optional] 
-**striped_cards** | [**StripeCardOut**](StripeCardOut.md) |  | [optional] 
+**stripeCustomerId** | **character** |  | [optional] 
+**sourceCountry** | **character** |  | [optional] 
+**sourceCurrency** | **character** |  | [optional] 
+**stripedCards** | [**StripeCardOut**](StripeCardOut.md) |  | [optional] 
 
 

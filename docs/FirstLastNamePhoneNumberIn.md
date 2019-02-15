@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **character** |  | [optional] 
-**first_name** | **character** |  | [optional] 
-**last_name** | **character** |  | [optional] 
-**phone_number** | **character** |  | [optional] 
+**firstName** | **character** |  | [optional] 
+**lastName** | **character** |  | [optional] 
+**phoneNumber** | **character** |  | [optional] 
 
 

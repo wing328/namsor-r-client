@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_key** | **character** |  | [optional] 
-**user_id** | **character** |  | [optional] 
+**apiKey** | **character** |  | [optional] 
+**userId** | **character** |  | [optional] 
 **admin** | **character** |  | [optional] 
 **vetted** | **character** |  | [optional] 
 **partner** | **character** |  | [optional] 

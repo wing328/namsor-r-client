@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time_unit** | **character** |  | [optional] 
-**period_start** | **integer** |  | [optional] 
-**period_end** | **integer** |  | [optional] 
-**total_usage** | **integer** |  | [optional] 
-**history_truncated** | **character** |  | [optional] 
+**timeUnit** | **character** |  | [optional] 
+**periodStart** | **integer** |  | [optional] 
+**periodEnd** | **integer** |  | [optional] 
+**totalUsage** | **integer** |  | [optional] 
+**historyTruncated** | **character** |  | [optional] 
 **data** | [**integer**](array.md) |  | [optional] 
-**col_headers** | **character** |  | [optional] 
-**row_headers** | **character** |  | [optional] 
+**colHeaders** | **character** |  | [optional] 
+**rowHeaders** | **character** |  | [optional] 
 
 

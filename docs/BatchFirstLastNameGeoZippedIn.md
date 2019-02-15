@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_names** | [**FirstLastNameGeoZippedIn**](FirstLastNameGeoZippedIn.md) |  | [optional] 
+**personalNames** | [**FirstLastNameGeoZippedIn**](FirstLastNameGeoZippedIn.md) |  | [optional] 
 
 

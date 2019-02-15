@@ -77,8 +77,15 @@ test_that("GenderBatch", {
   # @param BatchFirstLastNameIn  batch.first.last.name.in  A list of personal names  (optional)
   # @return [BatchFirstLastNameGenderedOut]
 
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
+  api.instance$apiClient$apiKeys['X-API-KEY'] <- Sys.getenv("API_KEY")
+
+  result <- api.instance$Gender("William", "Cheng")
+
+  expect_equal(result$firstName, "William")
+  expect_equal(result$lastName, "Cheng")
+  expect_equal(result$genderScale, -1)
+  expect_equal(result$likelyGender, "male")
+  expect_gt(result$score, 6.0)
 })
 
 test_that("GenderFull", {
@@ -164,8 +171,17 @@ test_that("Origin", {
   # @param character  last.name   
   # @return [FirstLastNameOriginedOut]
 
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
+  api.instance$apiClient$apiKeys['X-API-KEY'] <- Sys.getenv("API_KEY")
+  result <- api.instance$Origin("William", "Cheng")
+
+  expect_equal(result$firstName, "William")
+  expect_equal(result$lastName, "Cheng")
+  expect_gt(result$score, 3.0)
+  expect_equal(result$countryOrigin, "TW")
+  expect_equal(result$countryOriginAlt, "CN")
+  expect_equal(result$regionOrigin, "Asia")
+  expect_equal(result$topRegionOrigin, "Asia")
+  expect_equal(result$subRegionOrigin, "Eastern Asia")
 })
 
 test_that("OriginBatch", {

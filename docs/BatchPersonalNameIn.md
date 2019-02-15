@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_names** | [**PersonalNameIn**](PersonalNameIn.md) |  | [optional] 
+**personalNames** | [**PersonalNameIn**](PersonalNameIn.md) |  | [optional] 
 
 

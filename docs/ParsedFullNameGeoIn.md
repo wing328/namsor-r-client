@@ -4,11 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **character** |  | [optional] 
-**first_name** | **character** |  | [optional] 
-**last_name** | **character** |  | [optional] 
-**prefix_or_title** | **character** |  | [optional] 
+**firstName** | **character** |  | [optional] 
+**lastName** | **character** |  | [optional] 
+**prefixOrTitle** | **character** |  | [optional] 
 **suffix** | **character** |  | [optional] 
-**middle_name** | **character** |  | [optional] 
-**country_iso2** | **character** |  | [optional] 
+**middleName** | **character** |  | [optional] 
+**countryIso2** | **character** |  | [optional] 
 
 
